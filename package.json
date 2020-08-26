@@ -1,0 +1,22 @@
+{
+  "name": "micro_chat",
+  "version": "1.0.0",
+  "description": "Micro chat service with boot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pachecoSen/micro_chat.git"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "Ignacio Pacheco <pachecodr2013@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pachecoSen/micro_chat/issues"
+  },
+  "homepage": "https://github.com/pachecoSen/micro_chat#readme"
+}
