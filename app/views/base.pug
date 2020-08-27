@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
+        title Micro Chat
+        include bootstrap/css
+        link(rel="stylesheet", href="./assets/style.css")
+    body
+        header
+            include segmento/nav
+
+        main.main
+            block main_block
+
+        include bootstrap/js
+
+        if vue
+            script(src="./vue/vue.min.js")
+
+        block js_secion

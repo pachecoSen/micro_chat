@@ -1,0 +1,6 @@
+{
+    "ext": "js,pug",
+    "ignore": [
+        "public/vue/*.js"
+    ]
+}

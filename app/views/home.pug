@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-html(lang="es")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Micro Chat
-    body
-        h1 Hola Mundo
+extends base.pug
+
+block main_block
+    #home_box
+        h1 {{titulo}}
+block js_secion
+    script(src="./assets/js/home.js")
+    
