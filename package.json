@@ -4,6 +4,8 @@
   "description": "Micro chat service with boot",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev-run": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/pachecoSen/micro_chat/issues"
   },
-  "homepage": "https://github.com/pachecoSen/micro_chat#readme"
+  "homepage": "https://github.com/pachecoSen/micro_chat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
