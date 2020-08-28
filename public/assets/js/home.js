@@ -17,10 +17,18 @@ const componentHomeBox = new Vue({
     },
     methods: {
         sendMsg: function(e) {
-            this.addMsg({
-                'msg': this.msg,
-                'time': moment().format('YYYY, MMM D H:m'),
-                'type': 'msg_i'
+            socket.emit('newMsg', this.msg, (res) => {
+                this.addMsg({
+                    'msg': this.msg,
+                    'time': moment().format('YYYY, MMM D H:m'),
+                    'type': 'msg_i'
+                });
+
+                this.addMsg({
+                    'msg': res,
+                    'time': moment().format('YYYY, MMM D H:m'),
+                    'type': 'msg_you'
+                });
             });
 
             e.preventDefault();

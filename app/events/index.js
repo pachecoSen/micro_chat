@@ -2,7 +2,10 @@
 
 const load = io => {
     io.on('connection', cliente => {
-        cliente.on('newMsg', (data, callback) => {});
+        cliente.on('newMsg', (msg, callback) => {
+            console.log(msg);
+            callback('HI')
+        });
     });
 }
 
