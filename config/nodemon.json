@@ -3,6 +3,7 @@
     "ignore": [
         "public/vue/*.js",
         "public/fontawesome/*.js",
-        "public/fontawesome/*.css"
+        "public/fontawesome/*.css",
+        "public/moment/*.js"
     ]
 }
