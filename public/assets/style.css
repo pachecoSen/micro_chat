@@ -1,3 +1,7 @@
 body > main.main{
     padding-top: 60px !important;
 }
+
+form#form_send_msg > div.form-row .col.form-group{
+    margin: 0;
+}

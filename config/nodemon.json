@@ -1,6 +1,8 @@
 {
     "ext": "js,pug",
     "ignore": [
-        "public/vue/*.js"
+        "public/vue/*.js",
+        "public/fontawesome/*.js",
+        "public/fontawesome/*.css"
     ]
 }
