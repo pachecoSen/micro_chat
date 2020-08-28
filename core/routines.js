@@ -47,7 +47,23 @@ const load = path_base => {
         }
     });
 
-    Promise.all([vue, fontawesome]).then(res => {
+    const moment = new Promise((res, rej) => {
+        let msg = '>>> Moment generator routine failed...';
+        try {
+            src(resolve(node_modules, './moment/min/moment.min.js'))
+                .pipe(dest(resolve(public_dir, './moment')));   
+
+            msg = '>>> Moment generator routine completed...';
+            
+            res(true);
+        } catch (error) {
+            rej(false);
+        } finally {
+            console.log(msg);
+        }
+    });
+
+    Promise.all([vue, fontawesome, moment]).then(res => {
         if(-1 === res.indexOf(false))
             console.log('>> Completed routines...');
         else

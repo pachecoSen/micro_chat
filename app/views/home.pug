@@ -1,15 +1,38 @@
 extends base.pug
 
 block main_block
-  #home_box(class="container-fluid bg-dark fixed-bottom")
-    .row: .col: .container
-      form#form_send_msg(action='/api/message/new', method="post" @submit="sendMsg")
-        .form-row
-          .col.form-group
-            input#txtMessage.form-control(type="text" name="txtMessage" placeholder="Message" required autofocus v-model="msg")
-          .col-1
-            button(type="submit", class="btn btn-primary") Send
+  #home_box(class="container-fluid fixed-bottom")
+    .row: .col: .container.bg-light.border.border-primary
+        <template v-for="item in box_msg">
+          <template v-if="'tag' === item.type">
+            .row.justify-content-center
+              .col-6.text-center
+                span(class="badge badge-primary") [{{item.time}}] {{item.msg}}
+          </template>
+          <template v-if="'msg_i' === item.type">
+            .row.justify-content-start
+              .col-8.text-left
+                span(class="badge badge-secondary") [{{item.time}}] {{item.msg}}
+          </template>
+          <template v-if="'msg_you' === item.type">
+            .row.justify-content-end
+              .col-8.text-right
+                span(class="badge badge-secondary") [{{item.time}}] {{item.msg}}
+          </template>
+        </template>
+    <template v-if=view_form>
+      .row.bg-dark: .col: .container
+        form#form_send_msg(action='/api/message/new', method="post" @submit="sendMsg")
+          .form-row
+            .col.form-group
+              input#txtMessage.form-control(type="text" name="txtMessage" placeholder="Message" required autofocus v-model="msg")
+            .col-1
+              button(type="submit", class="btn btn-primary") Send
+    </template>
 
 block js_secion
+  script(src="/socket.io/socket.io.js")
+  script(src="./moment/moment.min.js")
+  script(src="./assets/js/socket_conn.js")
   script(src="./assets/js/home.js")
     
