@@ -108,3 +108,4 @@ package-lock.json
 
 # Public Directory
 public/vue
+public/fontawesome

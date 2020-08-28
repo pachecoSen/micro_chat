@@ -1,8 +1,15 @@
 extends base.pug
 
 block main_block
-    #home_box
-        h1 {{titulo}}
+  #home_box(class="container-fluid bg-dark fixed-bottom")
+    .row: .col: .container
+      form#form_send_msg(action='/api/message/new', method="post" @submit="sendMsg")
+        .form-row
+          .col.form-group
+            input#txtMessage.form-control(type="text" name="txtMessage" placeholder="Message" required autofocus v-model="msg")
+          .col-1
+            button(type="submit", class="btn btn-primary") Send
+
 block js_secion
-    script(src="./assets/js/home.js")
+  script(src="./assets/js/home.js")
     
